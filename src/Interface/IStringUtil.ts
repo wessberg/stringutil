@@ -5,6 +5,7 @@ export interface IStringUtil {
 	allIndexesOf (regex: RegExp, str: string, startingFrom?: number): number[];
 	trimAll (strings: string[]): string[];
 	camelCase (str: string): string;
+	pascalCase (str: string): string;
 	capitalize (str: string): string;
 	kebabCase (str: string): string;
 	lowerCaseFirst (str: string): string;

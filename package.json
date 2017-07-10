@@ -18,12 +18,19 @@
     "clean:dist": "rm -r -f dist",
     "clean:compiled": "rm -r -f compiled",
     "clean": "npm run clean:dist && npm run clean:compiled",
-    "build:pre": "npm run clean && mkdir -p dist/cjs/interface && mkdir -p dist/es2015/interface",
+    "build:pre": "npm run clean",
     "build:cjs": "tsc --module commonjs --outDir dist/cjs -p tsconfig.dist.json",
     "build:es2015": "tsc --module es2015 --outDir dist/es2015 -p tsconfig.dist.json",
     "build": "npm run build:pre && npm run build:cjs && npm run build:es2015",
     "test:pre": "npm run clean:compiled && tsc --module commonjs --target es2017 --sourceMap",
-    "test": "NODE_ENV=TEST npm run test:pre && ava"
+    "test": "NODE_ENV=TEST npm run test:pre && ava",
+    "tslint": "tslint -c tslint.json -p tsconfig.json",
+    "commit": "git add . && git commit -am ",
+    "publish": "npm run publish:patch",
+    "foo": "npm run tslint && npm run build && npm run commit",
+    "publish:major": "npm run tslint && npm version major && && git push && npm publish",
+    "publish:minor": "npm run tslint && npm version minor && && git push && npm publish",
+    "publish:patch": "npm run tslint && npm run build && npm run commit && npm version patch && && git push && npm publish"
   },
   "keywords": [
     "util",
@@ -35,7 +42,9 @@
   "author": "Frederik Wessberg",
   "license": "MIT",
   "devDependencies": {
-    "typescript": "2.3.3"
+    "@wessberg/ts-config": "0.0.5",
+    "tslint": "^5.5.0",
+    "typescript": "2.4.1"
   },
   "dependencies": {
     "tslib": "^1.7.1"

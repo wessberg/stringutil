@@ -5,3 +5,4 @@ tsconfig.*
 /compiled/
 .idea
 /typings/
+tslint.json
