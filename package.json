@@ -1,6 +1,6 @@
 {
   "name": "@wessberg/stringutil",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A class for performing simple operations on strings.",
   "main": "./dist/cjs/index.js",
   "module": "./dist/es2015/index.js",
