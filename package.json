@@ -26,11 +26,11 @@
     "test": "NODE_ENV=TEST npm run test:pre && ava",
     "tslint": "tslint -c tslint.json -p tsconfig.json",
     "commit": "git add . && git commit -am ",
-    "beforepublish": "npm run tslint && npm run build && npm run commit \"$npm_config_message)[@]\"",
-    "publish": "npm run publish:patch",
-    "publish:major": "npm run beforepublish && npm version major && && git push && npm publish",
-    "publish:minor": "npm run beforepublish && npm version minor && && git push && npm publish",
-    "publish:patch": "npm run beforepublish && npm version patch && git push && npm publish"
+    "beforepush": "npm run tslint && npm run build && npm run commit \"$npm_config_message)[@]\"",
+    "push": "npm run push:patch",
+    "push:major": "npm run beforepush && npm version major && git push && npm publish",
+    "push:minor": "npm run beforepush && npm version minor && git push && npm publish",
+    "push:patch": "npm run beforepush && npm version patch && git push && npm publish"
   },
   "keywords": [
     "util",
