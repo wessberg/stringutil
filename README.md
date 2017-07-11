@@ -17,6 +17,10 @@ stringUtil.allIndexesOf(/_/g, "my string has underscores _here_"); // returns [2
 
 ## Changelog:
 
+**v1.0.2**:
+
+- Switched to new ts-config setup.
+
 **v1.0.1**:
 
 - Added documentation.
