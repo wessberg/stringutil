@@ -1,2 +1,2 @@
-export {StringUtil} from "./StringUtil";
-export {IStringUtil} from "./Interface/IStringUtil";
+export {StringUtil} from "./StringUtil/StringUtil";
+export {IStringUtil} from "./StringUtil/Interface/IStringUtil";
