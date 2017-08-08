@@ -1,3 +1,12 @@
+<a name="1.0.8"></a>
+## 1.0.8 (2017-08-08)
+
+* 1.0.8 ([3507188](https://github.com/wessberg/StringUtil/commit/3507188))
+* Added more methods and specs ([d5d8000](https://github.com/wessberg/StringUtil/commit/d5d8000))
+* Bumped version ([7598fad](https://github.com/wessberg/StringUtil/commit/7598fad))
+
+
+
 <a name="1.0.7"></a>
 ## 1.0.7 (2017-08-08)
 
