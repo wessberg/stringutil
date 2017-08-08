@@ -48,6 +48,42 @@ export class StringUtil implements IStringUtil {
 	}
 
 	/**
+	 * Returns true if the string is empty (has nothing but whitespace)
+	 * @param {string} str
+	 * @returns {boolean}
+	 */
+	public isEmpty (str: string): boolean {
+		return this.trim(str).length === 0;
+	}
+
+	/**
+	 * Returns true if the given string starts with a quote.
+	 * @param {string} str
+	 * @returns {boolean}
+	 */
+	public startsWithQuote (str: string): boolean {
+		return str.startsWith(`"`) || str.startsWith(`'`) || str.startsWith("`");
+	}
+
+	/**
+	 * Returns true if the given string ends with a quote.
+	 * @param {string} str
+	 * @returns {boolean}
+	 */
+	public endsWithQuote (str: string): boolean {
+		return str.endsWith(`"`) || str.endsWith(`'`) || str.endsWith("`");
+	}
+
+	/**
+	 * Returns true if the given string is quoted.
+	 * @param {string} str
+	 * @returns {boolean}
+	 */
+	public isQuoted (str: string): boolean {
+		return this.startsWithQuote(str) && this.endsWithQuote(str);
+	}
+
+	/**
 	 * Returns all RegExp matches and capture groups for the given regular expression and string, optionally starting from a specific character.
 	 * @param {RegExp} regex
 	 * @param {string} str

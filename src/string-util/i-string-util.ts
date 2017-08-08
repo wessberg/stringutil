@@ -3,6 +3,10 @@ export interface IStringUtil {
 	upperCaseFirst (str: string): string;
 	isLowerCase (str: string): boolean;
 	isUpperCase (str: string): boolean;
+	startsWithQuote (str: string): boolean;
+	endsWithQuote (str: string): boolean;
+	isQuoted (str: string): boolean;
+	isEmpty (str: string): boolean;
 	allMatchesOf (regex: RegExp, str: string, startingFrom?: number): string[];
 	allMatchObjectsOf (regex: RegExp, str: string, startingFrom?: number): RegExpMatchArray[];
 	allMatchesAndCaptureGroupsOf (regex: RegExp, str: string, startingFrom?: number): string[][];
