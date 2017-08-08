@@ -7,6 +7,9 @@ export interface IStringUtil {
 	endsWithQuote (str: string): boolean;
 	isQuoted (str: string): boolean;
 	isEmpty (str: string): boolean;
+	isInCamelCase (str: string): boolean;
+	isInPascalCase (str: string): boolean;
+	isInKebabCase (str: string): boolean;
 	allMatchesOf (regex: RegExp, str: string, startingFrom?: number): string[];
 	allMatchObjectsOf (regex: RegExp, str: string, startingFrom?: number): RegExpMatchArray[];
 	allMatchesAndCaptureGroupsOf (regex: RegExp, str: string, startingFrom?: number): string[][];

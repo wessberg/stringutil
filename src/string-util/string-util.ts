@@ -6,6 +6,33 @@ import {IStringUtil} from "./i-string-util";
 export class StringUtil implements IStringUtil {
 
 	/**
+	 * Returns true if the string is in camelCase
+	 * @param {string} str
+	 * @returns {boolean}
+	 */
+	public isInCamelCase (str: string): boolean {
+		return this.camelCase(str) === str;
+	}
+
+	/**
+	 * Returns true if the string is in PascalCase
+	 * @param {string} str
+	 * @returns {boolean}
+	 */
+	public isInPascalCase (str: string): boolean {
+		return this.pascalCase(str) === str;
+	}
+
+	/**
+	 * Returns true if the string is in kebab-case
+	 * @param {string} str
+	 * @returns {boolean}
+	 */
+	public isInKebabCase (str: string): boolean {
+		return this.kebabCase(str) === str;
+	}
+
+	/**
 	 * Returns true if the string is in uppercase
 	 * @param {string} str
 	 * @returns {boolean}

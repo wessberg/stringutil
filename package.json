@@ -28,7 +28,7 @@
 		"tslint": "tslint -c tslint.json -p tsconfig.json",
 		"validate": "npm run tslint && npm run test",
 		"pretest": "npm run clean:compiled && npm run tsc:test",
-		"test": "NODE_ENV=TEST echo \"skipping tests...\"",
+		"test": "NODE_ENV=TEST ava",
 		"posttest": "npm run clean:compiled",
 		"prepublishOnly": "npm run validate && npm run build",
 		"precommit": "npm run tslint && exit 0",
@@ -54,10 +54,11 @@
 	"license": "MIT",
 	"devDependencies": {
 		"@wessberg/ts-config": "0.0.20",
+		"ava": "^0.21.0",
+		"conventional-changelog-cli": "latest",
 		"husky": "^0.14.3",
 		"tslint": "^5.6.0",
-		"typescript": "2.4.2",
-		"conventional-changelog-cli": "latest"
+		"typescript": "2.4.2"
 	},
 	"dependencies": {
 		"tslib": "^1.7.1"
