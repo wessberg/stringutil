@@ -1,4 +1,8 @@
 export interface IStringUtil {
+	lowerCaseFirst (str: string): string;
+	upperCaseFirst (str: string): string;
+	isLowerCase (str: string): boolean;
+	isUpperCase (str: string): boolean;
 	allMatchesOf (regex: RegExp, str: string, startingFrom?: number): string[];
 	allMatchObjectsOf (regex: RegExp, str: string, startingFrom?: number): RegExpMatchArray[];
 	allMatchesAndCaptureGroupsOf (regex: RegExp, str: string, startingFrom?: number): string[][];

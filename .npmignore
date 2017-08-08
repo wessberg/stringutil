@@ -33,3 +33,9 @@ npm-debug.log*
 .Trashes
 ehthumbs.db
 Thumbs.db
+*.pem
+*.p12
+*.crt
+*.csr
+/tsconfig.*
+/tslint.json

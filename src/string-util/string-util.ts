@@ -1,9 +1,51 @@
-import {IStringUtil} from "./Interface/IStringUtil";
+import {IStringUtil} from "./i-string-util";
 
 /**
  * A class for performing simple operations on strings.
  */
 export class StringUtil implements IStringUtil {
+
+	/**
+	 * Returns true if the string is in uppercase
+	 * @param {string} str
+	 * @returns {boolean}
+	 */
+	public isLowerCase (str: string): boolean {
+		return str.toLowerCase() === str;
+	}
+
+	/**
+	 * Returns true if the string is in uppercase
+	 * @param {string} str
+	 * @returns {boolean}
+	 */
+	public isUpperCase (str: string): boolean {
+		return str.toUpperCase() === str;
+	}
+
+	/**
+	 * Lowercases the first character of the string.
+	 * @param {string} str
+	 * @returns {string}
+	 */
+	public lowerCaseFirst (str: string): string {
+		if (str.length < 2) return str.toLowerCase();
+		const head = str.slice(0, 1);
+		const tail = str.slice(1);
+		return `${head.toLowerCase()}${tail}`;
+	}
+
+	/**
+	 * Uppercases the first character of the string.
+	 * @param {string} str
+	 * @returns {string}
+	 */
+	public upperCaseFirst (str: string): string {
+		if (str.length < 2) return str.toUpperCase();
+		const head = str.slice(0, 1);
+		const tail = str.slice(1);
+		return `${head.toUpperCase()}${tail}`;
+	}
 
 	/**
 	 * Returns all RegExp matches and capture groups for the given regular expression and string, optionally starting from a specific character.
@@ -132,15 +174,6 @@ export class StringUtil implements IStringUtil {
 		let _str = str;
 		if (!/[a-zæøåàáäâëêéèïîíìöòóôüúùû]/.test(_str)) _str = str.toLowerCase();
 		return _str.replace(/(?:_)[A-ZÅÀÁÂÄÆËÊÉÈÏÎÍÌÖÔÒÓØÜÛÚÙ]{2,}|[A-Z]{2,}(?=_)/g, $1 => ` ${ $1.toLowerCase() }`).replace(/[-_+]/g, " ").replace(/[ \t\r]*[A-ZÅÀÁÂÄÆËÊÉÈÏÎÍÌÖÔÒÓØÜÛÚÙ]+[ \t\r]+/g, $1 => ` ${ $1.toLowerCase() } `).replace(/[A-ZÅÀÁÂÄÆËÊÉÈÏÎÍÌÖÔÒÓØÜÛÚÙ]/g, $1 => ` ${ $1.toLowerCase() }`).replace(/^[ \t\r]+/g, "").replace(/\s{2,}/g, " ").replace(/\s+/g, "-");
-	}
-
-	/**
-	 * lowercases the first character of the provided string.
-	 * @param {string} str
-	 * @returns {string}
-	 */
-	public lowerCaseFirst (str: string): string {
-		return str.slice(0, 1).toLowerCase() + str.slice(1);
 	}
 
 	/**

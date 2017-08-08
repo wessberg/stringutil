@@ -1,4 +1,4 @@
-# StringUtil [![NPM version][npm-image]][npm-url]
+# StringUtil
 > A class for performing simple operations on strings.
 
 ## Installation
@@ -17,7 +17,7 @@ stringUtil.allIndexesOf(/_/g, "my string has underscores _here_"); // returns [2
 
 ## Changelog:
 
-**v1.0.2**:
+**v1.0.5**:
 
 - Switched to new ts-config setup.
 
