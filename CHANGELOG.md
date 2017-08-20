@@ -1,3 +1,12 @@
+<a name="1.0.9"></a>
+## 1.0.9 (2017-08-20)
+
+* 1.0.9 ([cf85760](https://github.com/wessberg/StringUtil/commit/cf85760))
+* Bumped dependencies ([24c3c74](https://github.com/wessberg/StringUtil/commit/24c3c74))
+* Bumped version ([4b06c61](https://github.com/wessberg/StringUtil/commit/4b06c61))
+
+
+
 <a name="1.0.8"></a>
 ## 1.0.8 (2017-08-08)
 
