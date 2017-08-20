@@ -1,3 +1,11 @@
+<a name="1.0.10"></a>
+## 1.0.10 (2017-08-20)
+
+* 1.0.10 ([ad40c81](https://github.com/wessberg/StringUtil/commit/ad40c81))
+* Updated to newest ts config ([3acb652](https://github.com/wessberg/StringUtil/commit/3acb652))
+
+
+
 <a name="1.0.9"></a>
 ## 1.0.9 (2017-08-20)
 

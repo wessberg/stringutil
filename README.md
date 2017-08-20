@@ -1,4 +1,14 @@
 # StringUtil
+[![NPM version][npm-version-image]][npm-version-url]
+[![License-mit][license-mit-image]][license-mit-url]
+
+[license-mit-url]: https://opensource.org/licenses/MIT
+
+[license-mit-image]: https://img.shields.io/badge/License-MIT-yellow.svg
+
+[npm-version-url]: https://www.npmjs.com/package/@wessberg/stringutil
+
+[npm-version-image]: https://badge.fury.io/js/%40wessberg%2Fstringutil.svg
 > A class for performing simple operations on strings.
 
 ## Installation
