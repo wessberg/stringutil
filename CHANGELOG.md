@@ -1,3 +1,12 @@
+<a name="1.0.11"></a>
+## 1.0.11 (2017-10-22)
+
+* 1.0.11 ([9f1a622](https://github.com/wessberg/StringUtil/commit/9f1a622))
+* Bumped deps. Added an 'unquote' method ([e8b9fec](https://github.com/wessberg/StringUtil/commit/e8b9fec))
+* Bumped version ([155b0f3](https://github.com/wessberg/StringUtil/commit/155b0f3))
+
+
+
 <a name="1.0.10"></a>
 ## 1.0.10 (2017-08-20)
 
