@@ -4,6 +4,14 @@ import {IStringUtil} from "./i-string-util";
  * A class for performing simple operations on strings.
  */
 export class StringUtil implements IStringUtil {
+	/**
+	 * Unquotes a quoted string
+	 * @param {string} str
+	 * @returns {string}
+	 */
+	public unquote (str: string): string {
+		return this.isQuoted(str) ? str.slice(1, str.length - 1) : str;
+	}
 
 	/**
 	 * Returns true if the string is in camelCase

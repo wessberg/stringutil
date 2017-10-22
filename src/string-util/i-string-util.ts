@@ -24,4 +24,5 @@ export interface IStringUtil {
 	trim (str: string): string;
 	takeFrom (str: string, from: number|string): string;
 	takeFromAfter (str: string, from: string): string;
+	unquote (str: string): string;
 }

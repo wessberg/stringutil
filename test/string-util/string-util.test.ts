@@ -38,3 +38,7 @@ test("StringUtil () => Correctly determines if a string is in kebab-case #2", t 
 test("StringUtil () => Correctly determines if a string is in kebab-case #3", t => {
 	t.false(stringUtil.isInKebabCase("PascalCase"));
 });
+
+test("StringUtil () => Correctly unquotes a quoted string #1", t => {
+	t.deepEqual(stringUtil.unquote(`"unquoted"`), "unquoted");
+});
