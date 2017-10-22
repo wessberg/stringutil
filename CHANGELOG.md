@@ -1,3 +1,12 @@
+<a name="1.0.12"></a>
+## 1.0.12 (2017-10-22)
+
+* 1.0.12 ([05db27f](https://github.com/wessberg/StringUtil/commit/05db27f))
+* Added a 'containsWhitespace' method ([2c9e1d9](https://github.com/wessberg/StringUtil/commit/2c9e1d9))
+* Bumped version ([7de0b59](https://github.com/wessberg/StringUtil/commit/7de0b59))
+
+
+
 <a name="1.0.11"></a>
 ## 1.0.11 (2017-10-22)
 
