@@ -21,6 +21,7 @@ export interface IStringUtil {
 	kebabCase (str: string): string;
 	lowerCaseFirst (str: string): string;
 	removeWhitespace (str: string, preserveSpaces?: boolean): string;
+	containsWhitespace (str: string): boolean;
 	trim (str: string): string;
 	takeFrom (str: string, from: number|string): string;
 	takeFromAfter (str: string, from: string): string;

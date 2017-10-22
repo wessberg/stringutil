@@ -267,6 +267,15 @@ export class StringUtil implements IStringUtil {
 	}
 
 	/**
+	 * Returns true if the given string contains whitespace
+	 * @param {string} str
+	 * @returns {boolean}
+	 */
+	public containsWhitespace (str: string): boolean {
+		return /(&nbsp;|\t|\n|\r|\s)/.test(str);
+	}
+
+	/**
 	 * Trims a string. It works like String.prototype.trim, except it also handles HTML spaces (&nbsp;).
 	 * @param {string} str
 	 * @returns {string}

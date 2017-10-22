@@ -42,3 +42,32 @@ test("StringUtil () => Correctly determines if a string is in kebab-case #3", t 
 test("StringUtil () => Correctly unquotes a quoted string #1", t => {
 	t.deepEqual(stringUtil.unquote(`"unquoted"`), "unquoted");
 });
+
+test("StringUtil () => Correctly determines if a string contains whitespace #1", t => {
+	t.true(stringUtil.containsWhitespace("foo "));
+});
+
+test("StringUtil () => Correctly determines if a string contains whitespace #2", t => {
+	t.true(stringUtil.containsWhitespace("foo&nbsp;"));
+});
+
+test("StringUtil () => Correctly determines if a string contains whitespace #3", t => {
+	t.true(stringUtil.containsWhitespace(`
+foo`));
+});
+
+test("StringUtil () => Correctly determines if a string contains whitespace #4", t => {
+	t.true(stringUtil.containsWhitespace("\tfoo"));
+});
+
+test("StringUtil () => Correctly determines if a string contains whitespace #5", t => {
+	t.true(stringUtil.containsWhitespace("\rfoo"));
+});
+
+test("StringUtil () => Correctly determines if a string contains whitespace #6", t => {
+	t.true(stringUtil.containsWhitespace("foo bar"));
+});
+
+test("StringUtil () => Correctly determines if a string contains whitespace #7", t => {
+	t.false(stringUtil.containsWhitespace("foo"));
+});
