@@ -115,7 +115,8 @@ export class StringUtil implements IStringUtil {
 	 * @returns {boolean}
 	 */
 	public isQuoted (str: string): boolean {
-		return this.startsWithQuote(str) && this.endsWithQuote(str);
+		const trimmed = this.removeWhitespace(str, true);
+		return this.startsWithQuote(trimmed) && this.endsWithQuote(trimmed);
 	}
 
 	/**
