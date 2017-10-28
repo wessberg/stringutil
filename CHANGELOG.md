@@ -1,3 +1,12 @@
+<a name="1.0.13"></a>
+## 1.0.13 (2017-10-28)
+
+* 1.0.13 ([35015f9](https://github.com/wessberg/StringUtil/commit/35015f9))
+* Bumped version ([1d7973e](https://github.com/wessberg/StringUtil/commit/1d7973e))
+* Refined the 'isQuoted' method ([51de085](https://github.com/wessberg/StringUtil/commit/51de085))
+
+
+
 <a name="1.0.12"></a>
 ## 1.0.12 (2017-10-22)
 
