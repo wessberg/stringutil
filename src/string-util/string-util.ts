@@ -257,11 +257,13 @@ export class StringUtil implements IStringUtil {
 	public removeWhitespace (str: string, preserveSpaces: boolean = false): string {
 
 		// Convert tabs to spaces and remove anything but spaces.
-		if (preserveSpaces) return str
-			.replace(/&nbsp;/g, " ")
-			.replace(/[\t]/g, " ")
-			.replace(/[\n\r]/g, "")
-			.replace(/[ ]{2,}/g, " ");
+		if (preserveSpaces) {
+			return str
+				.replace(/&nbsp;/g, " ")
+				.replace(/[\t]/g, " ")
+				.replace(/[\n\r]/g, "")
+				.replace(/[ ]{2,}/g, " ");
+		}
 
 		// Remove any kind of whitespace.
 		return str.replace(/[ \n\t\r]/g, "").replace(/&nbsp;/, "");

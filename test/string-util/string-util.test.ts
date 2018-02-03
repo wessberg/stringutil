@@ -80,6 +80,6 @@ test("StringUtil () => Correctly determines if a string is quoted #2", t => {
 	t.true(stringUtil.isQuoted(`"      foo     "`));
 });
 
-test("StringUtil () => Correctly determines if a string is quoted #3", t => {
+test("StringUtil () => Correctly determines if a string is quoted #4", t => {
 	t.false(stringUtil.isQuoted(`foo`));
 });
