@@ -1,6 +1,6 @@
 {
 	"name": "@wessberg/stringutil",
-	"version": "1.0.13",
+	"version": "1.0.14",
 	"description": "A class for performing simple operations on strings.",
 	"repository": {
 		"type": "git",
