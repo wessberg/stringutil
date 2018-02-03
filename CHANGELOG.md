@@ -1,5 +1,14 @@
+<a name="1.0.14"></a>
+## <small>1.0.14 (2018-02-03)</small>
+
+* 1.0.14 ([01a471e](https://github.com/wessberg/StringUtil/commit/01a471e))
+* Bumped deps ([c42422f](https://github.com/wessberg/StringUtil/commit/c42422f))
+* Bumped version ([54cfba6](https://github.com/wessberg/StringUtil/commit/54cfba6))
+
+
+
 <a name="1.0.13"></a>
-## 1.0.13 (2017-10-28)
+## <small>1.0.13 (2017-10-28)</small>
 
 * 1.0.13 ([35015f9](https://github.com/wessberg/StringUtil/commit/35015f9))
 * Bumped version ([1d7973e](https://github.com/wessberg/StringUtil/commit/1d7973e))
@@ -8,7 +17,7 @@
 
 
 <a name="1.0.12"></a>
-## 1.0.12 (2017-10-22)
+## <small>1.0.12 (2017-10-22)</small>
 
 * 1.0.12 ([05db27f](https://github.com/wessberg/StringUtil/commit/05db27f))
 * Added a 'containsWhitespace' method ([2c9e1d9](https://github.com/wessberg/StringUtil/commit/2c9e1d9))
@@ -17,7 +26,7 @@
 
 
 <a name="1.0.11"></a>
-## 1.0.11 (2017-10-22)
+## <small>1.0.11 (2017-10-22)</small>
 
 * 1.0.11 ([9f1a622](https://github.com/wessberg/StringUtil/commit/9f1a622))
 * Bumped deps. Added an 'unquote' method ([e8b9fec](https://github.com/wessberg/StringUtil/commit/e8b9fec))
@@ -26,7 +35,7 @@
 
 
 <a name="1.0.10"></a>
-## 1.0.10 (2017-08-20)
+## <small>1.0.10 (2017-08-20)</small>
 
 * 1.0.10 ([ad40c81](https://github.com/wessberg/StringUtil/commit/ad40c81))
 * Updated to newest ts config ([3acb652](https://github.com/wessberg/StringUtil/commit/3acb652))
@@ -34,7 +43,7 @@
 
 
 <a name="1.0.9"></a>
-## 1.0.9 (2017-08-20)
+## <small>1.0.9 (2017-08-20)</small>
 
 * 1.0.9 ([cf85760](https://github.com/wessberg/StringUtil/commit/cf85760))
 * Bumped dependencies ([24c3c74](https://github.com/wessberg/StringUtil/commit/24c3c74))
@@ -43,7 +52,7 @@
 
 
 <a name="1.0.8"></a>
-## 1.0.8 (2017-08-08)
+## <small>1.0.8 (2017-08-08)</small>
 
 * 1.0.8 ([3507188](https://github.com/wessberg/StringUtil/commit/3507188))
 * Added more methods and specs ([d5d8000](https://github.com/wessberg/StringUtil/commit/d5d8000))
@@ -52,7 +61,7 @@
 
 
 <a name="1.0.7"></a>
-## 1.0.7 (2017-08-08)
+## <small>1.0.7 (2017-08-08)</small>
 
 * 1.0.7 ([6d7be2d](https://github.com/wessberg/StringUtil/commit/6d7be2d))
 * Added a few extra methods ([5e404f1](https://github.com/wessberg/StringUtil/commit/5e404f1))
@@ -61,7 +70,7 @@
 
 
 <a name="1.0.6"></a>
-## 1.0.6 (2017-08-08)
+## <small>1.0.6 (2017-08-08)</small>
 
 * 1.0.6 ([87998bb](https://github.com/wessberg/StringUtil/commit/87998bb))
 * Added a few extra methods ([ce4e873](https://github.com/wessberg/StringUtil/commit/ce4e873))
@@ -69,7 +78,7 @@
 
 
 <a name="1.0.5"></a>
-## 1.0.5 (2017-07-11)
+## <small>1.0.5 (2017-07-11)</small>
 
 * 1.0.5 ([750e48a](https://github.com/wessberg/StringUtil/commit/750e48a))
 * Changed folder structure ([f517ee2](https://github.com/wessberg/StringUtil/commit/f517ee2))
@@ -78,7 +87,7 @@
 
 
 <a name="1.0.4"></a>
-## 1.0.4 (2017-07-10)
+## <small>1.0.4 (2017-07-10)</small>
 
 * added publish scripts ([30c6586](https://github.com/wessberg/StringUtil/commit/30c6586))
 * added publish scripts)[@] ([3dc29ac](https://github.com/wessberg/StringUtil/commit/3dc29ac))
@@ -86,7 +95,7 @@
 
 
 <a name="1.0.3"></a>
-## 1.0.3 (2017-07-10)
+## <small>1.0.3 (2017-07-10)</small>
 
 * added publish scripts ([f0760aa](https://github.com/wessberg/StringUtil/commit/f0760aa))
 * added publish scripts)[@] ([f7d8fd6](https://github.com/wessberg/StringUtil/commit/f7d8fd6))
@@ -94,7 +103,7 @@
 
 
 <a name="1.0.2"></a>
-## 1.0.2 (2017-07-10)
+## <small>1.0.2 (2017-07-10)</small>
 
 * (@added publish scripts)[@] ([e1264b6](https://github.com/wessberg/StringUtil/commit/e1264b6))
 * @added publish scripts ([a9c417a](https://github.com/wessberg/StringUtil/commit/a9c417a))
@@ -102,7 +111,7 @@
 
 
 <a name="1.0.1"></a>
-## 1.0.1 (2017-07-10)
+## <small>1.0.1 (2017-07-10)</small>
 
 * 1.0.1 ([472bc86](https://github.com/wessberg/StringUtil/commit/472bc86))
 * Added documentation. ([7ec0d7f](https://github.com/wessberg/StringUtil/commit/7ec0d7f))
