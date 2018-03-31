@@ -1,3 +1,12 @@
+<a name="1.0.15"></a>
+## <small>1.0.15 (2018-03-31)</small>
+
+* 1.0.15 ([e7b67e7](https://github.com/wessberg/StringUtil/commit/e7b67e7))
+* Bumped deps ([8fbc748](https://github.com/wessberg/StringUtil/commit/8fbc748))
+* Bumped version ([67107d8](https://github.com/wessberg/StringUtil/commit/67107d8))
+
+
+
 <a name="1.0.14"></a>
 ## <small>1.0.14 (2018-02-03)</small>
 
