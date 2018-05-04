@@ -1,3 +1,12 @@
+<a name="1.0.16"></a>
+## <small>1.0.16 (2018-05-04)</small>
+
+* 1.0.16 ([4bab235](https://github.com/wessberg/StringUtil/commit/4bab235))
+* Bumped version ([b902b65](https://github.com/wessberg/StringUtil/commit/b902b65))
+* Removed a few deprecated methods. Added a few new ones ([2c2b675](https://github.com/wessberg/StringUtil/commit/2c2b675))
+
+
+
 <a name="1.0.15"></a>
 ## <small>1.0.15 (2018-03-31)</small>
 
