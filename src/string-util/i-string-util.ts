@@ -10,10 +10,8 @@ export interface IStringUtil {
 	isInCamelCase (str: string): boolean;
 	isInPascalCase (str: string): boolean;
 	isInKebabCase (str: string): boolean;
-	allMatchesOf (regex: RegExp, str: string, startingFrom?: number): string[];
-	allMatchObjectsOf (regex: RegExp, str: string, startingFrom?: number): RegExpMatchArray[];
-	allMatchesAndCaptureGroupsOf (regex: RegExp, str: string, startingFrom?: number): string[][];
-	allIndexesOf (regex: RegExp, str: string, startingFrom?: number): number[];
+	allIndexesOf (str: string, regexp: RegExp, from?: number): number[];
+	matchAll (str: string, regexp: RegExp, from?: number): RegExpExecArray[];
 	trimAll (strings: string[]): string[];
 	camelCase (str: string): string;
 	pascalCase (str: string): string;
@@ -22,8 +20,7 @@ export interface IStringUtil {
 	lowerCaseFirst (str: string): string;
 	removeWhitespace (str: string, preserveSpaces?: boolean): string;
 	containsWhitespace (str: string): boolean;
+	containsOnlyWhitespace (str: string): boolean;
 	trim (str: string): string;
-	takeFrom (str: string, from: number|string): string;
-	takeFromAfter (str: string, from: string): string;
 	unquote (str: string): string;
 }

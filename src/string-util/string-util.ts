@@ -120,74 +120,42 @@ export class StringUtil implements IStringUtil {
 	}
 
 	/**
-	 * Returns all RegExp matches and capture groups for the given regular expression and string, optionally starting from a specific character.
-	 * @param {RegExp} regex
-	 * @param {string} str
-	 * @param {number} startingFrom
-	 * @returns {string[][]}
-	 */
-	public allMatchesAndCaptureGroupsOf (regex: RegExp, str: string, startingFrom: number = 0): string[][] {
-		if (startingFrom < 0 || startingFrom > str.length) throw new RangeError(`Given 'startingFrom' value: ${ startingFrom } is out of bounds!`);
-		const matches: string[][] = [];
-		let match: RegExpExecArray|null;
-		let currentString = str;
-		while ((match = regex.exec(currentString)) != null) {
-			if (match.index >= startingFrom) matches.push(match.slice(1));
-			currentString = currentString.slice(currentString.indexOf(match[1]) + match[1].length);
-		}
-		return matches;
-	}
-
-	/**
-	 * Returns all RegExp matches of the given regular expression on the given string, optionally starting from a specific index.
-	 * @param {RegExp} regex
-	 * @param {string} str
-	 * @param {number} startingFrom
-	 * @returns {string[]}
-	 */
-	public allMatchesOf (regex: RegExp, str: string, startingFrom: number = 0): string[] {
-		if (startingFrom < 0 || startingFrom > str.length) throw new RangeError(`Given 'startingFrom' value: ${ startingFrom } is out of bounds!`);
-		const matches: string[] = [];
-		let match: RegExpExecArray|null;
-		let currentString = str;
-		while ((match = regex.exec(currentString)) != null) {
-			if (match.index >= startingFrom) matches.push(match[1]);
-			currentString = currentString.slice(currentString.indexOf(match[1]) + match[1].length);
-		}
-		return matches;
-	}
-
-	/**
 	 * Returns all index matches of the provided Regular Expression on the provided string, optionally starting from a specific index.
-	 * @param {RegExp} regex
+	 * @param {RegExp} regexp
 	 * @param {string} str
-	 * @param {number} startingFrom
+	 * @param {number} [from=0]
 	 * @returns {number[]}
 	 */
-	public allIndexesOf (regex: RegExp, str: string, startingFrom: number = 0): number[] {
-		if (startingFrom < 0 || startingFrom > str.length) throw new RangeError(`Given 'startingFrom' value: ${ startingFrom } is out of bounds!`);
-		const matches: number[] = [];
-		let match: RegExpExecArray|null;
-		while ((match = regex.exec(str)) != null) {
-			if (match.index >= startingFrom) matches.push(match.index);
-		}
-		return matches;
+	public allIndexesOf (str: string, regexp: RegExp, from: number = 0): number[] {
+		return this.matchAll(str, regexp, from).map(match => match.index);
 	}
 
 	/**
-	 * Returns all match objects of the provided regular expression on the provided string, optionally starting from a specific index.
-	 * @param {RegExp} regex
+	 * Matches all occurrences of the given RegExp, including capture groups, globally. Supports both global RegExps and non-global RegExps
 	 * @param {string} str
-	 * @param {number} startingFrom
-	 * @returns {RegExpMatchArray[]}
+	 * @param {RegExp} regexp
+	 * @param {number} [from=0]
+	 * @returns {RegExpExecArray[]}
 	 */
-	public allMatchObjectsOf (regex: RegExp, str: string, startingFrom: number = 0): RegExpMatchArray[] {
-		if (startingFrom < 0 || startingFrom > str.length) throw new RangeError(`Given 'startingFrom' value: ${ startingFrom } is out of bounds!`);
-		const matches: RegExpExecArray[] = [];
-		let match: RegExpExecArray|null;
-		while ((match = regex.exec(str)) != null) {
-			if (match.index >= startingFrom) matches.push(match);
+	public matchAll (str: string, regexp: RegExp, from: number = 0): RegExpExecArray[] {
+		let flags = regexp.flags;
+		if (!flags.includes("g")) {
+			flags += "g";
 		}
+
+		// Normalize the regular expression and make sure it *does* include the Global ('g') flag
+		const normalizedRegExp = new RegExp(regexp, flags);
+
+		const matches: RegExpExecArray[] = [];
+
+		while (true) {
+			const match = normalizedRegExp.exec(str);
+			if (match == null) break;
+			if (match.index >= from) {
+				matches.push(match);
+			}
+		}
+
 		return matches;
 	}
 
@@ -266,7 +234,9 @@ export class StringUtil implements IStringUtil {
 		}
 
 		// Remove any kind of whitespace.
-		return str.replace(/[ \n\t\r]/g, "").replace(/&nbsp;/, "");
+		return str
+			.replace(/[ \n\t\r]/g, "")
+			.replace(/&nbsp;/, "");
 	}
 
 	/**
@@ -275,7 +245,16 @@ export class StringUtil implements IStringUtil {
 	 * @returns {boolean}
 	 */
 	public containsWhitespace (str: string): boolean {
-		return /(&nbsp;|\t|\n|\r|\s)/.test(str);
+		return str.length !== this.removeWhitespace(str).length;
+	}
+
+	/**
+	 * Returns true if the given string contains nothing but whitespace
+	 * @param {string} str
+	 * @returns {boolean}
+	 */
+	public containsOnlyWhitespace (str: string): boolean {
+		return this.removeWhitespace(str).length === 0;
 	}
 
 	/**
@@ -295,27 +274,5 @@ export class StringUtil implements IStringUtil {
 		}
 		return local;
 	}
-
-	/**
-	 * Slices a string from a specific index or string expression.
-	 * @param {string} str
-	 * @param {number | string} from
-	 * @returns {string}
-	 */
-	public takeFrom (str: string, from: number|string): string {
-		const index = typeof from === "number" ? from : str.indexOf(from);
-		return str.slice(index);
-	}
-
-	/**
-	 * Slices a string from after the string expression.
-	 * @param {string} str
-	 * @param {string} from
-	 * @returns {string}
-	 */
-	public takeFromAfter (str: string, from: string): string {
-		return this.takeFrom(str, from).slice(from.length);
-	}
-
 }
 
