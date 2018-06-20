@@ -1,3 +1,13 @@
+## <small>1.0.17 (2018-06-20)</small>
+
+* 1.0.17 ([1fc4d90](https://github.com/wessberg/stringutil/commit/1fc4d90))
+* Bumped version ([24c9f5d](https://github.com/wessberg/stringutil/commit/24c9f5d))
+* Bumped version ([28b57f8](https://github.com/wessberg/stringutil/commit/28b57f8))
+* Switched to exporting functions rather than a class for better tree-shakeability ([11c16f4](https://github.com/wessberg/stringutil/commit/11c16f4))
+* Updated README ([e7294e4](https://github.com/wessberg/stringutil/commit/e7294e4))
+
+
+
 ## <small>1.0.16 (2018-05-04)</small>
 
 * 1.0.16 ([4bab235](https://github.com/wessberg/stringutil/commit/4bab235))
