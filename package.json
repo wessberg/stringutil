@@ -1,16 +1,16 @@
 {
 	"name": "@wessberg/stringutil",
 	"version": "1.0.16",
-	"description": "A class for performing simple operations on strings.",
+	"description": "A collection of helper functions for working with strings",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/wessberg/StringUtil.git"
+		"url": "https://github.com/wessberg/stringutil.git"
 	},
 	"bugs": {
-		"url": "https://github.com/wessberg/StringUtil/issues"
+		"url": "https://github.com/wessberg/stringutil/issues"
 	},
 	"scripts": {
-		"test": "NODE_ENV=TEST ava",
+		"test": "NODE_ENV=TEST ava -v",
 		"changelog:generate": "conventional-changelog --outfile CHANGELOG.md --release-count 0",
 		"readme:badges": "node node_modules/@wessberg/ts-config/readme/badge/helper/add-badges.js",
 		"readme:refresh": "npm run changelog:generate && npm run readme:badges",
@@ -39,7 +39,6 @@
 	"keywords": [
 		"util",
 		"string",
-		"operations",
 		"kebabCase",
 		"dash-case",
 		"PascalCase",
@@ -52,15 +51,15 @@
 	},
 	"license": "MIT",
 	"devDependencies": {
-		"@wessberg/ts-config": "0.0.26",
+		"@wessberg/ts-config": "0.0.27",
 		"ava": "^0.25.0",
-		"conventional-changelog-cli": "^1.3.21",
+		"conventional-changelog-cli": "^2.0.1",
 		"husky": "^0.14.3",
-		"tslint": "^5.9.1",
-		"typescript": "^2.8.1"
+		"tslint": "^5.10.0",
+		"typescript": "^2.9.2"
 	},
 	"dependencies": {
-		"tslib": "^1.9.0"
+		"tslib": "^1.9.2"
 	},
 	"main": "./dist/cjs/index.js",
 	"module": "./dist/es2015/index.js",

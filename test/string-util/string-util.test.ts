@@ -1,85 +1,91 @@
 import {test} from "ava";
-import {StringUtil} from "../../src/string-util/string-util";
-
-const stringUtil = new StringUtil();
+import {containsWhitespace, convertToAscii, isInCamelCase, isInKebabCase, isInPascalCase, isQuoted, unquote} from "../../src/string-util/string-util";
 
 test("StringUtil () => Correctly determines if a string is in camelCase #1", t => {
-	t.true(stringUtil.isInCamelCase("camelCase"));
+	t.true(isInCamelCase("camelCase"));
 });
 
 test("StringUtil () => Correctly determines if a string is in camelCase #2", t => {
-	t.false(stringUtil.isInCamelCase("PascalCase"));
+	t.false(isInCamelCase("PascalCase"));
 });
 
 test("StringUtil () => Correctly determines if a string is in camelCase #3", t => {
-	t.false(stringUtil.isInCamelCase("kebab-case"));
+	t.false(isInCamelCase("kebab-case"));
 });
 
 test("StringUtil () => Correctly determines if a string is in PascalCase #1", t => {
-	t.true(stringUtil.isInPascalCase("PascalCase"));
+	t.true(isInPascalCase("PascalCase"));
 });
 
 test("StringUtil () => Correctly determines if a string is in PascalCase #2", t => {
-	t.false(stringUtil.isInPascalCase("camelCase"));
+	t.false(isInPascalCase("camelCase"));
 });
 
 test("StringUtil () => Correctly determines if a string is in PascalCase #3", t => {
-	t.false(stringUtil.isInPascalCase("kebab-case"));
+	t.false(isInPascalCase("kebab-case"));
 });
 
 test("StringUtil () => Correctly determines if a string is in kebab-case #1", t => {
-	t.true(stringUtil.isInKebabCase("kebab-case"));
+	t.true(isInKebabCase("kebab-case"));
 });
 
 test("StringUtil () => Correctly determines if a string is in kebab-case #2", t => {
-	t.false(stringUtil.isInKebabCase("camelCase"));
+	t.false(isInKebabCase("camelCase"));
 });
 
 test("StringUtil () => Correctly determines if a string is in kebab-case #3", t => {
-	t.false(stringUtil.isInKebabCase("PascalCase"));
+	t.false(isInKebabCase("PascalCase"));
 });
 
 test("StringUtil () => Correctly unquotes a quoted string #1", t => {
-	t.deepEqual(stringUtil.unquote(`"unquoted"`), "unquoted");
+	t.deepEqual(unquote(`"unquoted"`), "unquoted");
 });
 
 test("StringUtil () => Correctly determines if a string contains whitespace #1", t => {
-	t.true(stringUtil.containsWhitespace("foo "));
+	t.true(containsWhitespace("foo "));
 });
 
 test("StringUtil () => Correctly determines if a string contains whitespace #2", t => {
-	t.true(stringUtil.containsWhitespace("foo&nbsp;"));
+	t.true(containsWhitespace("foo&nbsp;"));
 });
 
 test("StringUtil () => Correctly determines if a string contains whitespace #3", t => {
-	t.true(stringUtil.containsWhitespace(`
+	t.true(containsWhitespace(`
 foo`));
 });
 
 test("StringUtil () => Correctly determines if a string contains whitespace #4", t => {
-	t.true(stringUtil.containsWhitespace("\tfoo"));
+	t.true(containsWhitespace("\tfoo"));
 });
 
 test("StringUtil () => Correctly determines if a string contains whitespace #5", t => {
-	t.true(stringUtil.containsWhitespace("\rfoo"));
+	t.true(containsWhitespace("\rfoo"));
 });
 
 test("StringUtil () => Correctly determines if a string contains whitespace #6", t => {
-	t.true(stringUtil.containsWhitespace("foo bar"));
+	t.true(containsWhitespace("foo bar"));
 });
 
 test("StringUtil () => Correctly determines if a string contains whitespace #7", t => {
-	t.false(stringUtil.containsWhitespace("foo"));
+	t.false(containsWhitespace("foo"));
 });
 
 test("StringUtil () => Correctly determines if a string is quoted #1", t => {
-	t.true(stringUtil.isQuoted(`"foo"`));
+	t.true(isQuoted(`"foo"`));
 });
 
 test("StringUtil () => Correctly determines if a string is quoted #2", t => {
-	t.true(stringUtil.isQuoted(`"      foo     "`));
+	t.true(isQuoted(`"      foo     "`));
 });
 
 test("StringUtil () => Correctly determines if a string is quoted #4", t => {
-	t.false(stringUtil.isQuoted(`foo`));
+	t.false(isQuoted(`foo`));
+});
+
+test("StringUtil () => Correctly converts Unicode to ASCII #1", t => {
+	t.false(convertToAscii("😵").includes("😵"));
+});
+
+test("StringUtil () => Correctly converts Unicode to ASCII #2", t => {
+	t.deepEqual(convertToAscii("Fødselsåret"), "Foedselsaaret");
 });
