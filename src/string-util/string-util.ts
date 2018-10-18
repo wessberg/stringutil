@@ -3,6 +3,8 @@
  * @param {string} str
  * @returns {string}
  */
+import {ITruncateOptions} from "./i-truncate-options";
+
 export function unquote (str: string): string {
 	return isQuoted(str) ? str.slice(1, str.length - 1) : str;
 }
@@ -297,4 +299,15 @@ export function convertToAscii (str: string): string {
 		.replace(/å/g, "aa")
 		// Remove all other unicode characters
 		.replace(/[^\x00-\x7F]/g, "");
+}
+
+/**
+ * Truncates the given text by the given max length and with the given omission character(s)
+ * @param {string} text
+ * @param {ITruncateOptions} [options]
+ * @returns {string}
+ */
+export function truncate (text: string, {length = 30, omission = "..."}: Partial<ITruncateOptions> = {}): string {
+	if (text.length <= length) return text;
+	return `${text.slice(0, (length -(omission.length)))}${omission}`;
 }

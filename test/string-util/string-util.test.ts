@@ -1,5 +1,8 @@
 import {test} from "ava";
-import {containsWhitespace, convertToAscii, isInCamelCase, isInKebabCase, isInPascalCase, isQuoted, unquote} from "../../src/string-util/string-util";
+import {containsWhitespace, convertToAscii, isInCamelCase, isInKebabCase, isInPascalCase, isQuoted, truncate, unquote} from "../../src/string-util/string-util";
+
+// tslint:disable:no-duplicate-string
+// tslint:disable:no-identical-functions
 
 test("StringUtil () => Correctly determines if a string is in camelCase #1", t => {
 	t.true(isInCamelCase("camelCase"));
@@ -88,4 +91,22 @@ test("StringUtil () => Correctly converts Unicode to ASCII #1", t => {
 
 test("StringUtil () => Correctly converts Unicode to ASCII #2", t => {
 	t.deepEqual(convertToAscii("Fødselsåret"), "Foedselsaaret");
+});
+
+test("StringUtil () => Correctly truncates a string #1", t => {
+	const truncateString = "hello, world";
+	// Assert that the string isn't truncated at all
+	t.deepEqual(truncate(truncateString), truncateString);
+});
+
+test("StringUtil () => Correctly truncates a string #2", t => {
+	const truncateString = "hello, world";
+	// Assert that the string isn't truncated at all
+	t.deepEqual(truncate(truncateString, {length: truncateString.length}), truncateString);
+});
+
+test("StringUtil () => Correctly truncates a string #3", t => {
+	const truncateString = "Hi there, my friend";
+	// Assert that the string isn't truncated at all
+	t.deepEqual(truncate(truncateString, {length: 11}), "Hi there...");
 });
