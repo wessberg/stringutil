@@ -2,6 +2,7 @@ import {test} from "ava";
 import {containsWhitespace, convertToAscii, isInCamelCase, isInKebabCase, isInPascalCase, isQuoted, truncate, unquote} from "../../src/string-util/string-util";
 
 // tslint:disable:no-duplicate-string
+
 // tslint:disable:no-identical-functions
 
 test("StringUtil () => Correctly determines if a string is in camelCase #1", t => {

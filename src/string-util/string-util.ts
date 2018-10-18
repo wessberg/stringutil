@@ -5,6 +5,11 @@
  */
 import {ITruncateOptions} from "./i-truncate-options";
 
+/**
+ * Unquotes the given string - if it is quoted
+ * @param {string} str
+ * @returns {string}
+ */
 export function unquote (str: string): string {
 	return isQuoted(str) ? str.slice(1, str.length - 1) : str;
 }
