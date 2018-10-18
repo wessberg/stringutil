@@ -1,8 +1,3 @@
-/**
- * Unquotes a quoted string
- * @param {string} str
- * @returns {string}
- */
 import {ITruncateOptions} from "./i-truncate-options";
 
 /**
