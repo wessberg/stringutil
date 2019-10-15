@@ -13,33 +13,23 @@
 		"dist/**/*.*"
 	],
 	"scripts": {
-		"generate:readme": "scaffold readme --blacklist faq",
-		"generate:license": "scaffold license",
-		"generate:contributing": "scaffold contributing",
-		"generate:coc": "scaffold coc",
-		"generate:changelog": "standard-changelog",
-		"generate:all": "npm run generate:license & npm run generate:contributing & npm run generate:coc & npm run generate:readme & npm run generate:changelog",
+		"generate:readme": "scaffold readme --yes",
+		"generate:license": "scaffold license --yes",
+		"generate:contributing": "scaffold contributing --yes",
+		"generate:coc": "scaffold coc --yes",
+		"generate:changelog": "standard-changelog --first-release",
+		"generate:all": "npm run generate:license & npm run generate:contributing & npm run generate:coc & npm run generate:readme && npm run generate:changelog",
 		"clean:dist": "rm -rf dist",
-		"clean:compiled": "rm -rf compiled",
-		"clean": "npm run clean:dist && npm run clean:compiled",
+		"clean": "npm run clean:dist",
 		"lint": "tsc --noEmit && tslint -c tslint.json --project tsconfig.json",
-		"tsc:dist:cjs": "tsc --module commonjs --outDir dist/cjs -p tsconfig.dist.json",
-		"tsc:dist:esm": "tsc --module es2015 --outDir dist/esm -p tsconfig.dist.json",
-		"tsc:test": "tsc --module commonjs --target es2017 --sourceMap",
-		"build:cjs": "npm run tsc:dist:cjs",
-		"build:esm": "npm run tsc:dist:esm",
-		"build:test": "npm run tsc:test",
-		"prebuild": "npm run clean",
-		"build": "npm run build:cjs & npm run build:esm",
-		"pretest": "npm run clean:compiled && npm run build:test",
-		"test": "NODE_ENV=TEST ava --verbose",
-		"posttest": "npm run clean:compiled",
-		"validate": "npm run lint && npm run test",
-		"publish:pre": "NODE_ENV=production npm run validate && NODE_ENV=production npm run build",
-		"publish:meta": "npm run generate:all && git add . && (git commit -am \"Bumped version\" || true) && git push",
-		"publish:patch": "npm run publish:pre && npm version patch && npm run publish:meta && npm publish",
-		"publish:minor": "npm run publish:pre && npm version minor && npm run publish:meta && npm publish",
-		"publish:major": "npm run publish:pre && npm version minor && npm run publish:meta && npm publish"
+		"prettier": "prettier --write '{src,test,documentation}/**/*.{js,ts,json,html,xml,css,md}'",
+		"test": "ava",
+		"prebuild": "npm run clean:dist",
+		"build": "npm run rollup",
+		"rollup": "rollup -c rollup.config.js",
+		"preversion": "npm run lint && NODE_ENV=production npm run build",
+		"version": "npm run generate:all && git add .",
+		"release": "np --no-cleanup --no-yarn"
 	},
 	"keywords": [
 		"util",
@@ -49,22 +39,32 @@
 		"PascalCase",
 		"camelCase"
 	],
-	"author": {
-		"name": "Frederik Wessberg",
-		"email": "frederikwessberg@hotmail.com",
-		"url": "https://github.com/wessberg"
-	},
+	"contributors": [
+		{
+			"name": "Frederik Wessberg",
+			"email": "frederikwessberg@hotmail.com",
+			"url": "https://github.com/wessberg",
+			"imageUrl": "https://avatars2.githubusercontent.com/u/20454213?s=460&v=4",
+			"github": "wessberg",
+			"role": "Lead Developer",
+			"twitter": "FredWessberg"
+		}
+	],
 	"license": "MIT",
 	"devDependencies": {
-		"@wessberg/ts-config": "^0.0.30",
-		"@wessberg/scaffold": "^1.0.4",
-		"standard-changelog": "^2.0.1",
-		"ava": "^0.25.0",
-		"tslint": "^5.11.0",
-		"typescript": "^3.1.3"
-	},
-	"dependencies": {
-		"tslib": "^1.9.3"
+		"@wessberg/ts-config": "^0.0.41",
+		"@wessberg/scaffold": "^1.0.19",
+		"@wessberg/rollup-plugin-ts": "^1.1.69",
+		"rollup": "^1.24.0",
+		"ava": "^2.4.0",
+		"tslint": "^5.20.0",
+		"typescript": "^3.6.4",
+		"standard-changelog": "^2.0.15",
+		"prettier": "^1.18.2",
+		"pretty-quick": "^2.0.0",
+		"husky": "^3.0.9",
+		"np": "^5.1.1",
+		"ts-node": "^8.4.1"
 	},
 	"main": "./dist/cjs/index.js",
 	"module": "./dist/esm/index.js",
@@ -73,18 +73,23 @@
 	"typings": "./dist/esm/index.d.ts",
 	"es2015": "./dist/esm/index.js",
 	"engines": {
-		"node": ">=9.0.0"
+		"node": ">=8.0.0"
 	},
-	"scaffold": {
-		"patreonUserId": "11315442",
-		"contributorMeta": {
-			"Frederik Wessberg": {
-				"imageUrl": "https://avatars2.githubusercontent.com/u/20454213?s=460&v=4",
-				"role": "Maintainer",
-				"twitterHandle": "FredWessberg",
-				"isCocEnforcer": true
-			}
-		},
-		"backers": []
+	"husky": {
+		"hooks": {
+			"pre-commit": "pretty-quick --staged"
+		}
+	},
+	"ava": {
+		"files": [
+			"test/*.test.ts"
+		],
+		"compileEnhancements": false,
+		"extensions": [
+			"ts"
+		],
+		"require": [
+			"ts-node/register"
+		]
 	}
 }

@@ -1,5 +1,14 @@
-import {test} from "ava";
-import {containsWhitespace, convertToAscii, isInCamelCase, isInKebabCase, isInPascalCase, isQuoted, truncate, unquote} from "../../src/string-util/string-util";
+import test from "ava";
+import {
+	containsWhitespace,
+	convertToAscii,
+	isInCamelCase,
+	isInKebabCase,
+	isInPascalCase,
+	isQuoted,
+	truncate,
+	unquote
+} from "../src/string-util/string-util";
 
 // tslint:disable:no-duplicate-string
 
@@ -54,8 +63,10 @@ test("StringUtil () => Correctly determines if a string contains whitespace #2",
 });
 
 test("StringUtil () => Correctly determines if a string contains whitespace #3", t => {
-	t.true(containsWhitespace(`
-foo`));
+	t.true(
+		containsWhitespace(`
+foo`)
+	);
 });
 
 test("StringUtil () => Correctly determines if a string contains whitespace #4", t => {
