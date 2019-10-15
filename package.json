@@ -1,6 +1,6 @@
 {
 	"name": "@wessberg/stringutil",
-	"version": "1.0.18",
+	"version": "1.0.19",
 	"description": "A collection of helper functions for working with strings",
 	"repository": {
 		"type": "git",

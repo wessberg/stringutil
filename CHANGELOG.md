@@ -1,3 +1,5 @@
+## [1.0.19](https://github.com/wessberg/stringutil/compare/v1.0.18...v1.0.19) (2019-10-15)
+
 ## [1.0.18](https://github.com/wessberg/stringutil/compare/v1.0.17...v1.0.18) (2018-10-18)
 
 ### Features
